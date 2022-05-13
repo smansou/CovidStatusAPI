@@ -60,7 +60,7 @@ async function buildRegionChart(region, criteria) {
     })
 }
 
-buildRegionChart('africa', 'confirmed')
+// buildRegionChart('africa', 'confirmed')
 
 
 
@@ -96,7 +96,6 @@ async function getCountryCodesByRegion(region) {
 async function getCovidDataByRegion(region) {
     const codesArr = await getCountryCodesByRegion(region);
     const allCountriesData = await getData('https://corona-api.com/countries');
-
     const regionCovid = allCountriesData['data'].filter(e => codesArr.indexOf(e['code']) != -1)
 
     console.log(regionCovid);
@@ -116,6 +115,47 @@ async function getCovidDataByCountry(countryCode) {
     }
     return dataObj;
 }
+async function getWorldData(){
+    const data = await getData("https://corona-api.com/timeline");
+    
+    const dataObj = {
+            confirmed: data['data'][0]['confirmed'], 
+            deaths: data['data'][0]['deaths'], 
+            recovered: data['data'][0]['recovered'], 
+            newConf: data['data'][0]['new_confirmed'], 
+            active: data['data'][0]['active'], 
+    }
+    console.log(dataObj);
+    return dataObj;
+}
+ async function buildWorldChart(){
+     const dataObj = await getWorldData();
+     const CovidChart = new Chart(chart, {
+        type: 'bar',                                        //! check more types
+        data: {
+            labels: Object.keys(dataObj),
+            datasets: [{
+                label: "Global",
+                data: Object.values(dataObj)
+            }]
+        },
+        options: {},
 
-// fillList();
-// buildCountryChart('il')
+    })
+
+ }
+
+fillList();
+// buildCountryChart('br')
+
+    function onload(){
+       const btnAF = document.querySelector('.btn-africa');
+      const  btnAS = document.querySelector('.btn-asia');
+      const  btnAM = document.querySelector('.btn-america');
+       const btnEU = document.querySelector('.btn-europe');
+        const btnOC = document.querySelector('.btn-oceania');
+        buildWorldChart();
+        
+        
+    }
+    onload()
