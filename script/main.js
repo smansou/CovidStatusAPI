@@ -24,6 +24,7 @@ async function onload() {
     const criteriaButtons = document.querySelector('.lower-button-container')
     const sidebar = document.querySelector('.sidebar');
     const wrapper = document.querySelector('.wrapper');
+    sidebar.setAttribute('data-visible', "no");
     
     await buildWorldChart();
     let current = null;
