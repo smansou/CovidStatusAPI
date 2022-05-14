@@ -7,7 +7,8 @@ import {getData, getCovidDataByCountry, getCovidDataByRegion, getWorldData} from
 export async function fillList() {
 
     const list = document.querySelector('#country-list');
-    const criteriaButtons = document.querySelector('.lower-button-container')
+    const wrapper = document.querySelector('.wrapper');
+    const sidebar = document.querySelector('.sidebar');
     const countryArr = await getData('https://restcountries.herokuapp.com/api/v1');
    
     for (let i = 0; i < countryArr.length; i++) {
@@ -15,11 +16,12 @@ export async function fillList() {
         
         listItem.textContent = countryArr[i]['name']['common'];
         listItem.value = countryArr[i]['cca2'];
-       
         list.appendChild(listItem);
     }
     list.addEventListener('change', () => {
-        criteriaButtons.setAttribute('style', "visibility: hidden;");
+        wrapper.setAttribute('style', 'width: 100%')
+        sidebar.setAttribute('style', "width: 0%");
+        sidebar.setAttribute('data-visible', "no");
         buildCountryChart(list.value);
     })
 
@@ -32,7 +34,10 @@ export let covidChart = new Chart(chart, {
         datasets: [{
             label: '',
             data: [],
-            backgroundColor: ['#5a83f3'],
+            backgroundColor: ['#cfd6e6'],
+            borderWidth: 1.5,
+            borderColor: ['#5a83f3'],
+
         }]
     },
     options: {}

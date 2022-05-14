@@ -22,38 +22,55 @@ async function onload() {
     const btnEU = document.querySelector('.btn-europe');
     const btnOC = document.querySelector('.btn-oceania');
     const criteriaButtons = document.querySelector('.lower-button-container')
+    const sidebar = document.querySelector('.sidebar');
+    const wrapper = document.querySelector('.wrapper');
+    
     await buildWorldChart();
     let current = null;
     btnAF.addEventListener('click', () => {
         current = 'africa';
         buildRegionChart('africa', 'confirmed', chart);
-        criteriaButtons.setAttribute('style', "visibility: visible;");
+        sidebar.setAttribute('style', "width: 5%;");
+        sidebar.setAttribute('data-visible', "yes");
+        wrapper.setAttribute('style', 'width: 95%')
     })
     btnOC.addEventListener('click', () => {
         current = 'oceania';
         buildRegionChart('oceania', 'confirmed', chart);
-        criteriaButtons.setAttribute('style', "visibility: visible;");
+        sidebar.setAttribute('style', "width: 5%;");
+        sidebar.setAttribute('data-visible', "yes");
+        wrapper.setAttribute('style', 'width: 95%')
+
     })
     btnAM.addEventListener('click', () => {
         current = 'americas';
         buildRegionChart('americas', 'confirmed', chart);
-        criteriaButtons.setAttribute('style', "visibility: visible;");
+        sidebar.setAttribute('style', "width: 5%;");
+        sidebar.setAttribute('data-visible', "yes");
+        wrapper.setAttribute('style', 'width: 95%')
+
     })
     btnEU.addEventListener('click', () => {
         current = 'europe';
         buildRegionChart('europe', 'confirmed', chart);
-        criteriaButtons.setAttribute('style', "visibility: visible;");
+        sidebar.setAttribute('style', "width: 5%;");
+        sidebar.setAttribute('data-visible', "yes");
+        wrapper.setAttribute('style', 'width: 95%')
+
     })
     btnAS.addEventListener('click', () => {
         current = 'asia';
         buildRegionChart('asia', 'confirmed', chart);
-        criteriaButtons.setAttribute('style', "visibility: visible;");
+        sidebar.setAttribute('style', "width: 5%;");
+        sidebar.setAttribute('data-visible', "yes");
+        wrapper.setAttribute('style', 'width: 95%')
     })
 
     const confirmedBtn = document.querySelector('.btn-confirmed');
     const deathsBtn = document.querySelector('.btn-deaths');
     const recoveredBtn = document.querySelector('.btn-recovered');
     const criticalBtn = document.querySelector('.btn-critical');
+
     confirmedBtn.addEventListener('click', () => {
         buildRegionChart(current, 'confirmed', chart);
     })
