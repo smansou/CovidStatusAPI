@@ -16,7 +16,7 @@
 
 async function fillList() {
     const list = document.querySelector('#country-list');
-    
+    const  criteriaButtons = document.querySelector('.lower-button-container')
     const countryArr = await getData('https://restcountries.herokuapp.com/api/v1');
     for (let i = 0; i < countryArr.length; i++) {
         const listItem = document.createElement('option');
@@ -28,6 +28,7 @@ async function fillList() {
     
     list.addEventListener('change', ()=>{
     
+        criteriaButtons.setAttribute('style',"display: none;");
         buildCountryChart(list.value);
     })
 }
@@ -46,7 +47,6 @@ let covidChart = new Chart(chart, {
                 label: '',
                 data: [],
                 backgroundColor: ['#5a83f3'],
-                fillStyle: 'lightGreen'
             }]
         },
         options: {}
@@ -155,7 +155,7 @@ async function getWorldData(){
       const  btnAM = document.querySelector('.btn-america');
        const btnEU = document.querySelector('.btn-europe');
         const btnOC = document.querySelector('.btn-oceania');
-       const  criteriaButtons = document.querySelector('.button-container')
+       const  criteriaButtons = document.querySelector('.lower-button-container')
        await buildWorldChart();
        let current = null;
         btnAF.addEventListener('click', ()=>{
