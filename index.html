@@ -12,18 +12,51 @@
         <div class="upper-container">
             
                
-              </select>
-        </div>
-        <div class="lower-container"> 
             <button class="btn btn-africa">Africa</button>
             <button class="btn btn-europe">Europe</button>
             <button class="btn btn-asia">Asia</button>
             <button class="btn btn-america">America</button>
             <button class="btn btn-oceania">oceania</button>
+    
             <select id="country-list" name="Countries" >
                <option value="placeholder">-- Choose Country --</option>
             </select>
-            <canvas id="chart">MAIN</canvas>
+        </div>
+        <div class="lower-container"> 
+            <div class="wrapper">
+                <div class="tabs">
+                  <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+                    <label for="tab-1" class="tab-label">Tab One</label>
+                    <div class="tab-content">
+                        <canvas id="chart1">MAIN</canvas>
+                    </div>
+                  </div>
+                  <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+                    <label for="tab-2" class="tab-label">Tab Two</label>
+                    <div class="tab-content"> 
+                        <canvas id="chart2">MAIN</canvas>
+                    </div>
+                  </div>
+                  <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+                    <label for="tab-3" class="tab-label">Tab Three</label>
+                    <div class="tab-content">
+                        <canvas id="chart3">MAIN</canvas>
+                    </div>
+                  </div>
+                  <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
+                    <label for="tab-4" class="tab-label">Tab Four</label>
+                    <div class="tab-content">
+                        <canvas id="chart4">MAIN</canvas>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            
         </div>
     </div>
     <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -32,3 +65,6 @@
 <!-- <script type="module" src="https://unpkg.com/axios/dist/axios.min.js" ></script>
     <script type= 'module' src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
 </html>
+
+
+

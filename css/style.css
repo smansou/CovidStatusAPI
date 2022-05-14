@@ -7,6 +7,7 @@
 body{
     height: 100vh;
     align-items: center;
+    background: #2c3e50;
 }
 
         .upper-container{
@@ -25,7 +26,7 @@ body{
             border: 1px solid black;
         }
         .outer-container{
-            width: 70%;
+            width: 90%;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -35,3 +36,79 @@ body{
         #country-list{
             width: 50%;
         }
+
+       
+
+        /* ----------------------------------------------------- */
+        .wrapper {
+            max-width: 50rem;
+            width: 100%;
+            margin: 0 auto;
+          }
+          .tabs {
+            position: relative;
+            margin: 1rem 0;
+            background: #5a83f3;
+            /* height: 14.75rem; */
+          }
+          .tabs::before,
+          .tabs::after {
+            content: "";
+            display: table;
+          }
+          .tabs::after {
+            clear: both;
+          }
+          .tab {
+            float: left;
+          }
+          .tab-switch {
+            display: none;
+          }
+          .tab-label {
+            position: relative;
+            display: block;
+            line-height: 2.75em;
+            height: 3em;
+            padding: 0 1.618em;
+            background: #5a83f3;
+            border-right: 0.125rem solid #9da9ec;
+            color: #fff;
+            cursor: pointer;
+            top: 0;
+            transition: all 0.25s;
+          }
+          .tab-label:hover {
+            top: -0.25rem;
+            transition: top 0.25s;
+          }
+          .tab-content {
+            /* height: 12rem; */
+            height: 50vh;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+            top: 2.75em;
+            left: 0;
+            padding: 1.618rem;
+            background: #fff;
+            color: #2c3e50;
+            /* border-bottom: 0.25rem solid #bdc3c7; */
+            opacity: 0;
+            transition: all 0.35s;
+          }
+          .tab-switch:checked + .tab-label {
+            background: #fff;
+            color: #2c3e50;
+            border-bottom: 0;
+            border-right: 0.125rem solid #fff;
+            transition: all 0.35s;
+            z-index: 1;
+            top: -0.0625rem;
+          }
+          .tab-switch:checked + label + .tab-content {
+            z-index: 2;
+            opacity: 1;
+            transition: all 0.35s;
+          }
+        /* ----------------------------------------------------- */
