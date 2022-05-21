@@ -13,7 +13,6 @@ export async function fillList() {
    
     for (let i = 0; i < countryArr.length; i++) {
         const listItem = document.createElement('option');
-        
         listItem.textContent = countryArr[i]['name']['common'];
         listItem.value = countryArr[i]['cca2'];
         list.appendChild(listItem);

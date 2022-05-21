@@ -6,11 +6,11 @@ import { getData, getCountryCodesByRegion } from "./data.js";
 
 
 export async function updateChart(chart, title, data, labels) {
-    chart.clear()
+    chart.clear();
     chart.data.datasets[0].label = title;
     chart.data.datasets[0].data = data;
     chart.data.labels = labels;
-    chart.update()
+    chart.update();
 }
 
 

@@ -11,7 +11,7 @@
 }
 
 body{
-    height: 100vh;
+    height: 100%;
     font-family: 'Roboto', sans-serif;   
          align-items: center;
     /* background-image: linear-gradient(to bottom #edf1f4, #c3cbdc); */
@@ -87,7 +87,7 @@ body{
             /* background-color: var(--primaryColor); */
             box-shadow: var(--shadow);
             
-            height: 100%;
+           
         }
         #country-list{
             background-color: transparent;
@@ -125,10 +125,11 @@ body{
 .lower-button-container > *:hover{
     background-color: var(--primaryColor);
     color: #d0d8e0;
+
 }
 
 .innerText{
-    font-size: 14px;
+    font-size: 1vw;
     transform: rotate(-90deg);
 }
 
@@ -138,7 +139,6 @@ body{
     /* border: 1px solid white; */
     width: 5%;
     height: 100%;
-   
    
 }
 
